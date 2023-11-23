@@ -15,3 +15,4 @@ npm run build
 ## 🤖 Tech
 - Next.js
 - Tailwind CSS
+- PocketBase
