@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import pb from "@/app/utils/pb";
-import { ICollections } from "./utils/types";
+import { ICollection } from "./utils/types";
 import Link from "next/link";
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
     const [userID, setUserID] = useState("");
     const [userVerified, setUserVerified] = useState(0); // 0: pending, 1: true, 2: false
 
-    const [collections, setCollections] = useState<ICollections[]>([]);
+    const [collections, setCollections] = useState<ICollection[]>([]);
     const [editingCollectionID, setEditingCollectionID] = useState("");
     const [editingCollectionName, setEditingCollectionName] = useState("");
 
@@ -41,7 +41,7 @@ export default function Home() {
     };
 
     const getCollections = async () => {
-        const response: ICollections[] = await pb
+        const response: ICollection[] = await pb
             .collection("collections")
             .getFullList({
                 sort: "-created",
