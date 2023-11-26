@@ -131,7 +131,7 @@ export default function Home() {
                         />
                         <Link
                             href={`/collection/${collection.id}`}
-                            className="bg-blue-200 w-full px-4 py-2 text-center rounded-b-md transition-colors border-2 border-transparent hover:bg-transparent hover:border-t-blue-200"
+                            className="px-4 py-2 text-center bg-blue-200 w-full rounded-b-md outline-none border-2 border-transparent transition-colors hover:bg-transparent hover:border-black"
                         >
                             View
                         </Link>
@@ -141,7 +141,7 @@ export default function Home() {
 
             <button
                 onClick={() => handleCreateCollection()}
-                className="bg-blue-200 py-2 px-4 rounded-md outline-none border-2 border-blue-200 transition-colors hover:bg-transparent absolute bottom-[10px]"
+                className="bg-blue-200 py-2 px-4 rounded-md outline-none border-2 border-transparent transition-colors hover:bg-transparent hover:border-black absolute bottom-[10px]"
             >
                 + New Collection
             </button>
