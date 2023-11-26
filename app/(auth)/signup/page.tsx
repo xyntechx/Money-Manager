@@ -65,7 +65,7 @@ const Signup = () => {
                     password.length < 1 ||
                     passwordConfirm.length < 1
                 }
-                className="bg-blue-200 py-2 px-4 rounded-md outline-none border-2 border-blue-200 transition-colors hover:bg-transparent disabled:bg-gray-100 disabled:border-gray-100 disabled:text-gray-300"
+                className="bg-blue-200 py-2 px-4 rounded-md outline-none border-2 border-transparent transition-colors hover:bg-transparent hover:border-black disabled:bg-gray-100 disabled:border-gray-100 disabled:text-gray-300"
             >
                 Sign Up
             </button>
