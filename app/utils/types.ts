@@ -13,7 +13,7 @@ export interface ITransaction {
     name: string;
     amount: number;
     isCredit: boolean;
-    date: Date;
+    date: string;
     collectionId: string;
     collectionName: string;
     created: Date;
