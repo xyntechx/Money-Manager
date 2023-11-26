@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import pb from "@/app/utils/pb";
-import { ICollection } from "./utils/types";
+import { ICollection, ITransaction } from "./utils/types";
 import Link from "next/link";
 
 export default function Home() {
@@ -72,9 +72,20 @@ export default function Home() {
     };
 
     const handleDeleteCollection = async (id: string) => {
-        await pb.collection("collections").delete(id);
+        const response: ITransaction[] = await pb
+            .collection("transactions")
+            .getFullList({
+                filter: `collection = "${id}"`,
+                requestKey: null,
+            });
 
-        // TODO: Delete all transactions associated with this collection
+        for (const r of response) {
+            // Delete all transactions of this collection
+            await pb.collection("transactions").delete(r.id);
+        }
+
+        // Delete the collection itself
+        await pb.collection("collections").delete(id);
 
         getCollections();
     };
